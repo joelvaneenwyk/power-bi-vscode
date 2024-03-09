@@ -8,3 +8,8 @@ node_modules/
 *.vsix
 dist/
 .vscode-test-web/
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

@@ -5,6 +5,7 @@ Brueckl
 chinacloudapi
 clippy
 cloudapi
+cmds
 codecell
 CONFIGURESCALEOUT
 CONNECTIONSTRING
@@ -14,7 +15,9 @@ DATASETPARAMETER
 DATASETREFRESH
 DATASETTABLE
 DATASETTABLEPARTITION
+dotenv
 eaglex
+flaskenv
 Germay
 LOADSTATISTICS
 pbinb
@@ -24,6 +27,7 @@ PBIX
 portfinder
 scloud
 SYNCREADONLYREPLICAS
+TASKFILE
 tmsl
 TMSL
 UNASSIGNCAPACITY
