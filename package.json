@@ -1,5 +1,5 @@
 {
-	"name": "power-bi-vscode",
+	"name": "@jovaneen/power-bi-vscode",
 	"displayName": "Power BI Studio",
 	"description": "Power BI support for VSCode",
 	"version": "1.6.5",
