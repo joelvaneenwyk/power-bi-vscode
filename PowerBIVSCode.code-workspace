@@ -16,13 +16,13 @@
 		"version": "2.0.0",
 		"tasks": [
 			{
-                "label": "VSCE Package",
-                "type": "shell",
-                "command": "vsce",
-                "args": [
-                    "package"
-                ]
-            }
+				"label": "VSCE Package",
+				"type": "shell",
+				"command": "vsce",
+				"args": [
+					"package"
+				]
+			}
 		]
 	}
 }
