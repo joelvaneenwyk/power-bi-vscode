@@ -20,7 +20,7 @@ export abstract class FabricFSCache {
 	}
 
 	public static async stats(fabricUri: FabricFSUri): Promise<vscode.FileStat | undefined> {
-		if(!fabricUri.isValid) {
+		if (!fabricUri.isValid) {
 			ThisExtension.log(`stats() - Fabric URI is not valid: ${fabricUri.uri.toString()}`);
 			throw vscode.FileSystemError.FileNotFound(fabricUri.uri);
 		}
@@ -35,7 +35,7 @@ export abstract class FabricFSCache {
 		}
 		const stats = await item.stats();
 
-		if(!stats) {
+		if (!stats) {
 			throw vscode.FileSystemError.FileNotFound(fabricUri.uri);
 		}
 
@@ -43,11 +43,11 @@ export abstract class FabricFSCache {
 	}
 
 	public static async readDirectory(fabricUri: FabricFSUri): Promise<[string, vscode.FileType][] | undefined> {
-		if(!fabricUri.isValid) {
+		if (!fabricUri.isValid) {
 			ThisExtension.log(`readDirectory() - Fabric URI is not valid: ${fabricUri.uri.toString()}`);
 			throw vscode.FileSystemError.FileNotFound(fabricUri.uri);
 		}
-		
+
 		let item = FabricFSCache._cache.get(fabricUri.cacheItemKey);
 		if (!item) {
 			item = await FabricFSCache.addCacheItem(fabricUri);
@@ -82,8 +82,8 @@ export abstract class FabricFSCache {
 
 		if (fabricUri.uriType == FabricUriType.part) {
 			(item as FabricFSItem).writeContentToSubpath(fabricUri.part, content, options);
-			
-			await FabricFileDecorationProvider.fileModifed(item.FabricUri);
+
+			await FabricFileDecorationProvider.fileModified(item.FabricUri);
 
 			return;
 		}

@@ -10,6 +10,10 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{json,md,html,yml,yaml,css,scss,js,jsx,ts,tsx,yaml}]
+[*.{json,md,html,yml,yaml,css,scss,mjs,cjs,js,jsx,ts,tsx,yaml}]
+indent_size = 2
+indent_style = space
+
+[.eslintrc.js]
 indent_size = 2
 indent_style = space
