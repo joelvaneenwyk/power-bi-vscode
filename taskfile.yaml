@@ -1,0 +1,23 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  PUBLISH_PAT: "TBD"
+  PUBLISHER_NAME: "TBD"
+  ENV_FILE_PATH: "{{.TASKFILE_DIR}}/.env"
+  ENV_FILE: "{{fromSlash .ENV_FILE_PATH}}"
+
+tasks:
+  default:
+    dotenv: [".env"]
+    cmds:
+      - cmd: >-
+          proto use
+          && npm install
+          && vsce verify-pat --pat "$PUBLISH_PAT" "$PUBLISHER_NAME"
+          && vsce publish --pat "$PUBLISH_PAT" --pre-release
+    vars:
+      PUBLISH_PAT: '{{default "" .Env.PUBLISH_PAT}}'
+      PUBLISHER_NAME: '{{default "" .Env.PUBLISHER_NAME}}'
+    silent: false
